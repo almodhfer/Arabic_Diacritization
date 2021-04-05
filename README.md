@@ -7,11 +7,11 @@ This work was done as part of my thesis
 
 There are four models as follows:
 
-- The baseline model: consists of 3 bidirectional LSTM layers with optional batch norm layers.
-- The seq2seq with attention model: uses the baseline model as an encoder and the location-sensitive attention.
-- The Tacotron based seq2seq model: uses the same encoder as Tacotron,
+- The baseline model (baselin): consists of 3 bidirectional LSTM layers with optional batch norm layers.
+- The seq2seq with attention model (seq2seq): uses the baseline model as an encoder and the location-sensitive attention.
+- The Tacotron based seq2seq model (tacotron_based): uses the same encoder as Tacotron,
   but the decoder and the attention are the same as the seq2seq model.
-- The CBHG model: uses only the encoder of the Tacotron based model with optional post LSTM, and batch norm layers.
+- The CBHG model (cbhg): uses only the encoder of the Tacotron based model with optional post LSTM, and batch norm layers.
 
 The CBHG model achieves the best WER and DER with and without
 case_ending.
