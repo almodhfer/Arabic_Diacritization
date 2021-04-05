@@ -1,0 +1,62 @@
+session_name: base-baseline-encoder
+
+
+data_directory: "data"
+data_type: "CA_MSA"
+log_directory: "log_dir"
+load_training_data: true
+load_test_data: false
+load_validation_data: true
+n_training_examples: null # null load all training examples, good for fast loading
+n_test_examples: null  # null load all test examples
+n_validation_examples: null # null load all validation examples
+test_file_name: "test.csv"
+is_data_preprocessed: false # The data file is organized as (original text | text | diacritics)
+data_separator: '|' # Required if the data already processed
+diacritics_separator: '*'  # Required if the data already processed
+text_encoder: ArabicEncoderWithStartSymbol
+text_cleaner: valid_arabic_cleaners # a white list that uses only Arabic letters, punctuations, and a space
+max_len: 600 # sentences larger than this size will not be used
+
+max_steps: 2_000_000
+learning_rate: 0.001
+batch_size: 16
+adam_beta1: 0.9
+adam_beta2: 0.999
+use_decay: true
+weight_decay: 0.0
+
+encoder_embedding_dim: 256
+decoder_embedding_dim: 256
+
+encoder_dim: 512 # used by the decoder
+encoder_units: [256, 256, 256]
+use_batch_norm: true
+decoder_units: 256
+decoder_layers: 2
+attention_units: 256
+use_decoder_prenet: true
+teacher_forcing_probability: 0.0
+decoder_prenet_depth: [256, 128]
+is_attention_accumulative: true
+attention_type: LocationSensitive
+
+
+
+use_mixed_precision: false
+optimizer_type: Adam
+text_encoder: ArabicEncoderWithStartSymbol
+text_cleaner: null
+device: cuda
+
+# LOGGING
+evaluate_frequency: 5000
+evaluate_with_error_rates_frequency: 5000
+n_predicted_text_tensorboard: 10 # To be written to the tensorboard
+model_save_frequency: 5000
+train_plotting_frequency: 1000
+n_steps_avg_losses: [100, 500, 1_000, 5_000] # command line display of average loss values for the last n steps
+error_rates_n_batches: 10000 # if calculating error rate is slow, then you can specify the number of batches to be calculated
+
+test_model_path: null # load the last saved model
+train_resume_model_path: null # load last saved model

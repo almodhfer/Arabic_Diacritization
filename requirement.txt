@@ -1,0 +1,8 @@
+torch==1.7.0
+numpy==1.19.5
+matplotlib==3.3.3
+pandas==1.1.5
+ruamel.yaml==0.16.12
+tensorboard==2.4.0
+diacritization-evaluation==0.5
+tqdm==4.56.0
