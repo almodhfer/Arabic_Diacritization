@@ -20,6 +20,7 @@ max_len: 600 # sentences larger than this size will not be used
 
 max_steps: 2_000_000
 learning_rate: 0.001
+use_batch_norm: false
 batch_size: 64
 adam_beta1: 0.9
 adam_beta2: 0.999
