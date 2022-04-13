@@ -43,5 +43,6 @@ elif args.model_kind in ['baseline',"cbhg"]:
     trainer = CBHGTrainer(args.config, args.model_kind)
 else:
     raise ValueError("The model kind is not supported")
-
-trainer.run()
+    
+if __name__ == '__main__':
+    trainer.run()
