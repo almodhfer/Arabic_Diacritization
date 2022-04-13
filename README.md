@@ -33,7 +33,7 @@ case_ending.
 All models config are placed in the config directory.
 
 ```bash
-python train.py --model model_name --config config/config_name.yml
+python train.py --model_kind model_name --config config/config_name.yml
 ```
 
 The model will report the WER and DER while training using the
