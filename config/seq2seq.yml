@@ -45,8 +45,6 @@ attention_type: LocationSensitive
 
 use_mixed_precision: false
 optimizer_type: Adam
-text_encoder: ArabicEncoderWithStartSymbol
-text_cleaner: null
 device: cuda
 
 # LOGGING
